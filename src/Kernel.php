@@ -50,7 +50,9 @@ class Kernel implements KernelContract
 
     public function start(null|ServerRequestInterface $request = null): void
     {
-        // TODO: Implement start() method.
+        $this->app->run(
+            request: $request,
+        );
     }
 
     private function buildSlim(): void
