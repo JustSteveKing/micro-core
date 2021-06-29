@@ -10,6 +10,23 @@ use Psr\Http\Message\ServerRequestInterface;
 interface KernelContract
 {
     /**
+     * Boot our Kernel.
+     *
+     * @param string $basePath
+     * @param ContainerInterface $container
+     *
+     * @return KernelContract
+     */
+    public static function boot(string $basePath, ContainerInterface $container): KernelContract;
+
+    /**
+     * Return the base path of the application.
+     *
+     * @return string
+     */
+    public function basePath(): string;
+
+    /**
      * Get an instance of the built container.
      *
      * @return ContainerInterface

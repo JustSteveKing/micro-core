@@ -1,6 +1,6 @@
 {
     "name": "juststeveking/micro-core",
-    "description": "A collection of core components to be used within the micro boilerplate for slim framework",
+    "description": "A collection of core components to be used within the micro boilerplate for slim framework.",
     "type": "library",
     "license": "MIT",
     "authors": [
