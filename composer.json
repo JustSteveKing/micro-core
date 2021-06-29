@@ -21,6 +21,7 @@
     },
     "require": {
         "php": "^8.0",
+        "nesbot/carbon": "^2.50",
         "psr/container": "^1.0",
         "slim/psr7": "^1.4",
         "slim/slim": "^4.8"
