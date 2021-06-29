@@ -1,0 +1,35 @@
+{
+    "name": "juststeveking/micro-core",
+    "description": "A collection of core components to be used within the micro boilerplate for slim framework",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "role": "Developer",
+            "name": "Steve McDougall",
+            "email": "juststevemcd@gmail.com",
+            "homepage": "https://www.juststeveking.uk/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "JustSteveKing\\Micro\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {}
+    },
+    "require": {
+        "php": "^8.0",
+        "psr/container": "^1.0",
+        "slim/psr7": "^1.4",
+        "slim/slim": "^4.8"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
