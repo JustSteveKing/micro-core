@@ -6,6 +6,7 @@ namespace JustSteveKing\Micro\Contracts;
 
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Slim\App;
 
 interface KernelContract
 {
@@ -25,6 +26,13 @@ interface KernelContract
      * @return string
      */
     public function basePath(): string;
+
+    /**
+     * Return an instance of the underlying Slim Application.
+     *
+     * @return App
+     */
+    public function app(): App;
 
     /**
      * Get an instance of the built container.
