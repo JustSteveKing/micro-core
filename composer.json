@@ -21,6 +21,7 @@
     },
     "require": {
         "php": "^8.0",
+        "crell/api-problem": "^3.5",
         "dragonmantank/cron-expression": "^3.1",
         "juststeveking/http-status-code": "^2.0",
         "nesbot/carbon": "^2.50",
