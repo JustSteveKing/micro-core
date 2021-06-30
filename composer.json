@@ -27,7 +27,9 @@
         "nesbot/carbon": "^2.50",
         "psr/container": "^1.0",
         "slim/psr7": "^1.4",
-        "slim/slim": "^4.8",
+        "slim/slim": "^4.8"
+    },
+    "require-dev": {
         "symfony/routing": "^5.3"
     },
     "minimum-stability": "dev",
