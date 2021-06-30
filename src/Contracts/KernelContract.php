@@ -7,6 +7,9 @@ namespace JustSteveKing\Micro\Contracts;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\App;
+use Slim\Interfaces\CallableResolverInterface;
+use Slim\Interfaces\RouteCollectorInterface;
+use Slim\Interfaces\RouteResolverInterface;
 
 interface KernelContract
 {
@@ -15,10 +18,19 @@ interface KernelContract
      *
      * @param string $basePath
      * @param ContainerInterface $container
+     * @param CallableResolverInterface|null $callableResolver
+     * @param RouteCollectorInterface|null $routeCollector
+     * @param RouteResolverInterface|null $routeResolver
      *
      * @return KernelContract
      */
-    public static function boot(string $basePath, ContainerInterface $container): KernelContract;
+    public static function boot(
+        string $basePath,
+        ContainerInterface $container,
+        null|CallableResolverInterface $callableResolver = null,
+        null|RouteCollectorInterface $routeCollector = null,
+        null|RouteResolverInterface $routeResolver = null,
+    ): KernelContract;
 
     /**
      * Return the base path of the application.

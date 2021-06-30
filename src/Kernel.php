@@ -9,6 +9,9 @@ use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\App;
 use Slim\Factory\AppFactory;
+use Slim\Interfaces\CallableResolverInterface;
+use Slim\Interfaces\RouteCollectorInterface;
+use Slim\Interfaces\RouteResolverInterface;
 
 class Kernel implements KernelContract
 {
@@ -17,15 +20,24 @@ class Kernel implements KernelContract
     private function __construct(
         private string $basePath,
         private ContainerInterface $container,
+        private null|CallableResolverInterface $callableResolver,
+        private null|RouteCollectorInterface $routeCollector,
+        private null|RouteResolverInterface $routeResolver,
     ) {}
 
     public static function boot(
         string $basePath,
         ContainerInterface $container,
+        null|CallableResolverInterface $callableResolver = null,
+        null|RouteCollectorInterface $routeCollector = null,
+        null|RouteResolverInterface $routeResolver = null,
     ): KernelContract {
         $kernel =  new Kernel(
             basePath: $basePath,
             container: $container,
+            callableResolver: $callableResolver,
+            routeCollector: $routeCollector,
+            routeResolver: $routeResolver,
         );
 
         $kernel->buildSlim();
@@ -61,6 +73,10 @@ class Kernel implements KernelContract
             container: $this->container(),
         );
 
-        $this->app = AppFactory::create();
+        $this->app = AppFactory::create(
+            callableResolver: $this->callableResolver,
+            routeCollector: $this->routeCollector,
+            routeResolver: $this->routeResolver,
+        );
     }
 }
