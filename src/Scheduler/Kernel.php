@@ -73,6 +73,7 @@ class Kernel implements SchedulerContract
     public function run(): void
     {
         foreach ($this->events() as $event) {
+            var_dump($event); die();
             if (! $event->dueToRun(date: $this->date())) {
                 continue;
             }
