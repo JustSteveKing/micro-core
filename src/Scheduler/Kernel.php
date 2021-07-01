@@ -30,7 +30,7 @@ class Kernel implements SchedulerContract
      */
     public function events(): array
     {
-        return $this->events();
+        return $this->events;
     }
 
     /**
